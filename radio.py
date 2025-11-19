@@ -1,3 +1,4 @@
+import os
 import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -7,9 +8,9 @@ from pytgcalls.types import MediaStream
 # ==========================================
 # ⚠️ منطقة البيانات (أدخل بياناتك هنا)
 # ==========================================
-BOT_TOKEN = "8598900327:AAF3hHdoH8ZixGBiDIlaEq4Poa33jQKNSsg" # توكن البوت
-API_ID = 7740070                                         
-API_HASH = "7ffc4b7ec62beb0695ef5d44a58080bb"              
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+API_ID = int(os.environ.get("API_ID"))
+API_HASH = os.environ.get("API_HASH")              
 
 # 🚨 بيانات الاشتراك الإجباري
 FORCED_SUB_CHANNEL = "@J11_11H" 
@@ -326,3 +327,4 @@ if __name__ == "__main__":
     import pyrogram
     loop = asyncio.get_event_loop()
     loop.run_until_complete(start_bot())
+
